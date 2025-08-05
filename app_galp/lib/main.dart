@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'VerdanaPro',
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 const Text(
                   'Clique no ícone da regra de\nsegurança que pretende consultar',
                   textAlign: TextAlign.center,
@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 25),
 
                 /*grid com as 9 imagens*/
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: GridView.count(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(), /*sem scroll interno*/
@@ -49,12 +49,22 @@ class MyApp extends StatelessWidget {
                     mainAxisSpacing: 1, /*espaço entre as imagens - eixo do y*/
                     childAspectRatio: 1,
                     children: List.generate(9, (index) {
-                      return GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
+                      return ElevatedButton(
+                        onPressed: () {
+                          /*para no futuro adicionar as páginas específicas para cada norma de segurança*/
+                        },
+                        /*estilo dos botões*/
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          backgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                          surfaceTintColor: Colors.transparent,
+                        ),
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
                           child: Image.asset(
-                            'assets/images/img${index + 1}.png', /*carregar as imagens de 1 a 9*/
+                            'assets/images/img${index + 1}.png',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -73,7 +83,7 @@ class MyApp extends StatelessWidget {
                   ),
                   child: const Text('Iniciar Quiz'),
                 ),
-                const SizedBox(height: 250),
+                const SizedBox(height: 220),
                 const Text(
                   'ⓘ Termos e Condições',
                   style: TextStyle(fontSize: 12),
