@@ -11,11 +11,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color(0xFFFCD434), /*cor de fundo para #fcd434*/
-        body: const Center(
-          child: Text(
-            'Olá, Flutter!',
-            style: TextStyle(fontSize: 24),
+        backgroundColor: const Color(0xFFFBD130), /*cor de fundo para 0xFFFBD130*/
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                SizedBox(height: 10),
+                Text(
+                  'Galp Life Saving Rules',
+                  style: TextStyle(
+                    fontFamily: 'VerdanaPro', /*Verdana Pro*/
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
         ),
       ),
